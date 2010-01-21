@@ -23,7 +23,7 @@
                 <input type="text" name="Name" size="30">
             </p>
             <p>
-                Please specify a file, or a set of files:<br>
+                Please choose a file, or a set of files:<br>
                 <input type="file" name="datafile" size="40">
             </p>
             <div>
