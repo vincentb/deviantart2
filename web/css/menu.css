@@ -1,0 +1,36 @@
+body{
+	background:#bbb;
+	}
+
+.navigation {
+      	margin: 0;
+      	padding: 0;
+      	list-style: none;
+      	width: 180px;
+      	background :#bbb;
+      	font: 0.9em "Arial", sans-serif;
+      	font-weight:bold;
+      	}
+
+.navigation a, .navigation span {
+      	display: block;
+      	padding: 1px 5px;
+      	color: #669;
+      	text-decoration: none;
+      	}
+
+
+.navigation a:hover, .navigation a:focus, .navigation a:active {
+      	text-decoration: underline;
+      	}
+
+.navigation .subMenu {
+	font-size:0.8em;
+      	margin: 0;
+      	padding: 0;
+      	}
+
+.navigation ul.subMenu a {
+     	background: none;
+     	padding: 1px 10px;
+     	}

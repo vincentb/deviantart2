@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 14 janv. 2010 16:48:04 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="deviantart" name="iut.Category" table="Category">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="iut.Category" fetch="select" name="category">
+      <column name="parent_id"/>
+    </many-to-one>
+    <property name="name" type="string">
+      <column name="name" not-null="true"/>
+    </property>
+    <set inverse="true" name="categories">
+      <key>
+        <column name="parent_id"/>
+      </key>
+      <one-to-many class="iut.Category"/>
+    </set>
+    <set inverse="true" name="documents">
+      <key>
+        <column name="category" not-null="true"/>
+      </key>
+      <one-to-many class="iut.Document"/>
+    </set>
+  </class>
+</hibernate-mapping>

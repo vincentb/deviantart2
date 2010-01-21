@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 14 janv. 2010 16:48:04 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="deviantart" name="iut.Users" table="Users">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="sex" type="char">
+      <column length="1" name="sex" not-null="true"/>
+    </property>
+    <property name="firstname" type="string">
+      <column name="firstname" not-null="true"/>
+    </property>
+    <property name="lastname" type="string">
+      <column name="lastname" not-null="true"/>
+    </property>
+    <property name="birthdate" type="date">
+      <column length="10" name="birthdate"/>
+    </property>
+    <property name="email" type="string">
+      <column length="320" name="email" not-null="true"/>
+    </property>
+    <set inverse="true" name="commentaries">
+      <key>
+        <column name="contributor" not-null="true"/>
+      </key>
+      <one-to-many class="iut.Commentary"/>
+    </set>
+    <set inverse="true" name="documents">
+      <key>
+        <column name="artist" not-null="true"/>
+      </key>
+      <one-to-many class="iut.Document"/>
+    </set>
+  </class>
+</hibernate-mapping>
